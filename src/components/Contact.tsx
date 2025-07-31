@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
       name: 'Ms. Kiruba Wesley',
       role: 'Faculty Coordinator',
       phone: '+91 9884646387',
-      email: '@sjce.ac.in',
+      email: 'kirubawesley@stjosephs.ac.in',
       avatar: '',
       gradient: 'from-cyan-500 to-blue-600'
     },
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
       name: 'Ms. Adlin Layola J.A',
       role: 'Faculty Coordinator',
       phone: '+91 8148677917',
-      email: 'rajesh.kumar@sjce.ac.in',
+      email: 'adlinlayola@stjosephs.ac.in',
       avatar: '',
       gradient: 'from-orange-500 to-red-600'
     },
@@ -27,14 +27,14 @@ const Contact: React.FC = () => {
       role: 'Event Coordinator',
       phone: '+91 8925249376',
       email: '22am133@stjosephs.ac.in',
-      avatar: '',
-      gradient: 'from-purple-500 to-pink-600'
+      avatar: 'https://i.postimg.cc/yNN74Wx4/Tony-passportphoto.jpg',
+      gradient: ''
     },
     {
       name: 'Annapoorani V',
       role: 'Event Coordinator',
-      phone: '+91 7871774998',
-      email: 'priya.sharma@sjce.ac.in',
+      phone: '+91 6381959580',
+      email: 'annapoorani3124@gmail.com',
       avatar: '',
       gradient: 'from-green-500 to-teal-600'
     },
@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
       name: 'Nilavezhil Oviya V P',
       role: 'Event Coordinator',
       phone: '+91 9342526470',
-      email: 'rajesh.kumar@sjce.ac.in',
+      email: '22am162@st.josephs.ac.in',
       avatar: '',
       gradient: 'from-orange-500 to-red-600'
     }

@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import { Clock, Info, Trophy, Users, X } from 'lucide-react';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Users, Clock, Trophy, Info } from 'lucide-react';
 
 interface Event {
   id: string;
@@ -25,119 +25,119 @@ const Events: React.FC = () => {
 
   const events: Event[] = [
     {
-      id: 'prompt-quest',
-      title: 'PROMPT QUEST',
-      description: 'Master the art of AI prompt engineering in this creative challenge.',
-      fullDescription: 'Dive deep into the world of prompt engineering where creativity meets artificial intelligence. Participants will craft ingenious prompts to achieve specific outcomes using various AI models.',
+      id: 'mystic-morphs',
+      title: 'Mystic Morphs',
+      description: 'A magical transformation challenge that tests your creativity and teamwork.',
+      fullDescription: 'Unleash your inner wizard! Teams will face a series of creative and logic-based transformation tasks inspired by the wizarding world. Collaboration and imagination are key to morphing your way to victory.',
       rules: [
-        'Teams of 2-3 members allowed',
-        'Use provided AI tools only',
-        'Submit within time limit',
-        'Original prompts required',
-        'Creativity and effectiveness will be judged'
+        'Team size: 3 members',
+        'All team members must participate in each round',
+        'No use of electronic devices unless specified',
+        'Judges’ decision is final',
+        'Respect the spirit of fair play'
       ],
       coordinator: {
         name: 'Dr. Sarah Johnson',
         phone: '+91 98765 43210',
         email: 'sarah.johnson@sjce.ac.in'
       },
-      icon: '🔍',
+      icon: '🦄',
       gradient: 'from-cyan-500 to-blue-600',
-      participants: '50 teams',
-      duration: '3 hours',
-      prize: '₹15,000'
+      participants: 'Teams of 3',
+      duration: '2 hours',
+      prize: 'Exciting Prizes'
     },
     {
-      id: 'binary-brawl',
-      title: 'BINARY BRAWL',
-      description: 'Ultimate coding competition testing your algorithmic prowess.',
-      fullDescription: 'A high-intensity competitive programming event where participants solve complex algorithmic problems under time pressure. Test your coding skills against the best minds.',
+      id: 'portraits-of-perception',
+      title: 'Portraits of Perception',
+      description: 'A visual puzzle event where perception and observation are everything.',
+      fullDescription: 'Decode, deduce, and draw! Teams will solve visual riddles and perception-based challenges, putting their observation skills to the ultimate test.',
       rules: [
-        'Individual participation only',
-        'Use any programming language',
-        '5 problems of increasing difficulty',
-        'Real-time leaderboard',
-        'Plagiarism will lead to disqualification'
+        'Team size: 4 members',
+        'No external help allowed',
+        'Each round is elimination-based',
+        'All answers must be submitted within the time limit',
+        'Respect the event coordinators and other teams'
       ],
       coordinator: {
         name: 'Prof. Michael Chen',
         phone: '+91 87654 32109',
         email: 'michael.chen@sjce.ac.in'
       },
-      icon: '💻',
+      icon: '😶‍🌫️',
       gradient: 'from-purple-500 to-pink-600',
-      participants: '100 individual',
-      duration: '4 hours',
-      prize: '₹20,000'
+      participants: 'Teams of 4',
+      duration: '1.5 hours',
+      prize: 'Exciting Prizes'
     },
     {
-      id: 'venture-vault',
-      title: 'VENTURE VAULT',
-      description: 'Pitch your innovative AI startup ideas to industry experts.',
-      fullDescription: 'Present your groundbreaking AI startup concepts to a panel of industry veterans and investors. Turn your innovative ideas into potentially funded ventures.',
+      id: 'azkaban-escape',
+      title: 'Azkaban Escape',
+      description: 'A thrilling escape room event inspired by the magical world of Azkaban.',
+      fullDescription: 'Can you break out of Azkaban? Teams will solve a series of puzzles and riddles to escape the wizarding prison. Only the sharpest minds and best collaborators will succeed.',
       rules: [
-        'Teams of 3-5 members',
-        '10-minute pitch presentation',
-        'Business plan submission required',
-        'Focus on AI/ML applications',
-        'Q&A session with judges'
+        'Team size: 2-3 members',
+        'No use of mobile phones or internet',
+        'Hints will be provided at a penalty',
+        'Time-bound event',
+        'Any form of cheating leads to disqualification'
       ],
       coordinator: {
         name: 'Dr. Priya Sharma',
         phone: '+91 76543 21098',
         email: 'priya.sharma@sjce.ac.in'
       },
-      icon: '💡',
+      icon: '☠️',
       gradient: 'from-green-500 to-teal-600',
-      participants: '25 teams',
-      duration: '5 hours',
-      prize: '₹30,000'
+      participants: 'Teams of 2-3',
+      duration: '2 hours',
+      prize: 'Exciting Prizes'
     },
     {
-      id: 'brain-matrix',
-      title: 'BRAIN MATRIX',
-      description: 'Test your AI knowledge in this intense quiz competition.',
-      fullDescription: 'A comprehensive quiz covering artificial intelligence, machine learning, deep learning, and recent technological advancements. Perfect for AI enthusiasts.',
+      id: 'triwizard-challenge',
+      title: 'Triwizard Challenge',
+      description: 'A multi-stage event inspired by the legendary Triwizard Tournament.',
+      fullDescription: 'Face magical tasks, solve riddles, and complete physical and mental challenges in this ultimate test of wizarding skill and teamwork.',
       rules: [
-        'Teams of 2 members only',
-        'Multiple rounds: Prelims, Semi-finals, Finals',
-        'Mixed format: MCQ, Rapid fire, Visual rounds',
-        'Current affairs in AI included',
-        'No electronic devices allowed'
+        'Team size: 3 members',
+        'Each stage must be completed to advance',
+        'No outside assistance allowed',
+        'Points awarded for creativity and teamwork',
+        'Follow all safety instructions'
       ],
       coordinator: {
         name: 'Dr. Rajesh Kumar',
         phone: '+91 65432 10987',
         email: 'rajesh.kumar@sjce.ac.in'
       },
-      icon: '🧠',
+      icon: '🏆',
       gradient: 'from-orange-500 to-red-600',
-      participants: '75 teams',
-      duration: '4 hours',
-      prize: '₹12,000'
+      participants: 'Teams of 3',
+      duration: '3 hours',
+      prize: 'Exciting Prizes'
     },
     {
-      id: 'tech-titans',
-      title: 'TECH TITANS',
-      description: 'Build revolutionary AI applications in this intensive hackathon.',
-      fullDescription: '24-hour hackathon challenge where teams develop complete AI applications. From ideation to deployment, showcase your technical prowess and innovation.',
+      id: 'gringotts-innovation-vault',
+      title: 'Gringotts Innovation Vault',
+      description: 'A treasure hunt for the most innovative minds, inspired by Gringotts Bank.',
+      fullDescription: 'Crack clues, solve innovation challenges, and race against time to unlock the secrets of the Gringotts Vault. Only the most inventive teams will claim the treasure.',
       rules: [
-        'Teams of 3-4 members',
-        '24-hour development window',
-        'Use any AI/ML frameworks',
-        'Demo and presentation required',
-        'Code repository must be public'
+        'Team size: 2 members',
+        'All clues must be solved to proceed',
+        'No internet or phone usage',
+        'Respect the event area and props',
+        'Winners determined by time and accuracy'
       ],
       coordinator: {
         name: 'Prof. Lisa Wong',
         phone: '+91 54321 09876',
         email: 'lisa.wong@sjce.ac.in'
       },
-      icon: '🚀',
+      icon: '🧙‍♂️',
       gradient: 'from-indigo-500 to-purple-600',
-      participants: '40 teams',
-      duration: '24 hours',
-      prize: '₹50,000'
+      participants: 'Teams of 2',
+      duration: '1.5 hours',
+      prize: 'Exciting Prizes'
     }
   ];
 

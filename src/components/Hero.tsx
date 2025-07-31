@@ -129,7 +129,7 @@ const Hero: React.FC = () => {
           <div className="text-center">
             <div className="flex items-center justify-center mb-2">
               <Award className="text-purple-400 mr-2" size={24} />
-              <span className="text-3xl font-bold text-purple-400">6</span>
+              <span className="text-3xl font-bold text-purple-400">5</span>
             </div>
             <p className="text-gray-400">Events</p>
           </div>
