@@ -1,13 +1,501 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GENAISIS - Futuristic AI Symposium Website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAIsis - AIML Department Symposium</title>
+    <meta name="description" content="Join the magical world of AI and Machine Learning at GenAIsis - The premier symposium by AIML Department, St. Joseph's College">
+    <meta name="keywords" content="AI, Machine Learning, Symposium, GenAIsis, St. Joseph's College, AIML">
+    <meta name="author" content="AIML Department, St. Joseph's College">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=MedievalSharp&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/genaisis logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="Assets/genaisis logo.png">
+    <link rel="apple-touch-icon" href="Assets/genaisis logo.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Custom Cursor */
+        .custom-cursor {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            background: url('https://i.postimg.cc/QCZGGR17/13.png') no-repeat center center;
+            background-size: contain;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        /* Hide default cursor */
+        html, * {
+            cursor: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Magical Cursor -->
+    <div id="magical-cursor" aria-hidden="true"></div>
+    <div id="cursor-trail" aria-hidden="true"></div>
+    
+    <!-- Particle Background -->
+    <div id="particle-container" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-hat-wizard" aria-hidden="true"></i>
+                <img src="Assets/genaisis logo.png" alt="GenAIsis Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#timeline" class="nav-link" role="menuitem">Timeline</a></li>
+                <li role="none"><a href="#events" class="nav-link" role="menuitem">Events</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Landing Section -->
+        <section id="home" class="section landing-section">
+            <div class="container">
+                <div class="landing-content">
+                    <img src="Assets/genaisis logo.png" alt="GenAIsis" class="main-logo">
+                    <p class="subtitle">AIML Department Symposium</p>
+                    <p class="college-name">St. Joseph's College Of Engineering - Where Magic Meets Technology</p>
+                    
+                    <!-- Registration Button -->
+                    <div class="hero-cta">
+                        <a href="https://forms.gle/W15XosJ5qzrWvwKG8" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-glow" style="color:whitesmoke">
+                            <i class="fas fa-ticket-alt" style="color: rgb(54, 107, 183);"></i> Register Now
+                        </a>
+                    </div>
+
+                    <!-- Countdown Timer -->
+                    <div class="countdown-container">
+                        <h2 class="countdown-title">The Magic Begins In</h2>
+                        <div class="countdown-timer" id="countdown" role="timer" aria-live="polite">
+                            <div class="countdown-block">
+                                <span id="days" aria-label="Days">00</span>
+                                <label for="days">Days</label>
+                            </div>
+                            <div class="countdown-block">
+                                <span id="hours" aria-label="Hours">00</span>
+                                <label for="hours">Hours</label>
+                            </div>
+                            <div class="countdown-block">
+                                <span id="minutes" aria-label="Minutes">00</span>
+                                <label for="minutes">Minutes</label>
+                            </div>
+                            <div class="countdown-block">
+                                <span id="seconds" aria-label="Seconds">00</span>
+                                <label for="seconds">Seconds</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button" onclick="scrollToSection('events')" aria-label="Begin your journey to events section">
+                        Begin Your Journey
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">The Wisdom of AIML</h2>
+                <div class="about-content">
+                    <p class="about-intro">The Department of Artificial Intelligence and Machine Learning at St. Joseph's College of Engineering is at the forefront of technological innovation, preparing students for the AI-driven future.</p>
+                </div>
+                <div class="about-grid">
+                    <article class="about-card">
+                        <i class="fas fa-eye" aria-hidden="true"></i>
+                        <h3>Vision</h3>
+                        <p>To be a premier center of excellence in Artificial Intelligence and Machine Learning, fostering innovation and creating future-ready professionals.
+                        </p>
+                    </article>
+                    <article class="about-card">
+                        <i class="fas fa-bullseye" aria-hidden="true"></i>
+                        <h3>Mission</h3>
+                        <p>To provide world-class education, conduct cutting-edge research, and develop AI solutions that address real-world challenges.
+                        </p>
+                    </article>
+                    <article class="about-card">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <h3>Goals</h3>
+                        <p>Excellence in AI education, groundbreaking research, industry collaboration, and nurturing the next generation of AI leaders.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section">
+            <div class="container">
+                <h2 class="section-title">The Chronicle of AIML</h2>
+                <div class="timeline-container">
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3>2021 - Department of AI & ML Founded</h3>
+                            <p>Established with a vision to lead in artificial intelligence education.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3>2022 - Research Projects</h3>
+                            <p>Initiated cutting-edge research in machine learning applications.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3>2023 - Industry Partnerships</h3>
+                            <p>Collaborated with leading tech companies for practical exposure.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3>2024 - GENAISIS Symposium</h3>
+                            <p>Launching our flagship AI & ML symposium event.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="timeline-content">
+                            <h3>2025 - GENAISIS 2.0 Symposium</h3>
+                            <p>The 2025 GENAISIS Symposium will advance AI and ML innovation, building on the success of 2024.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">The Five Chambers of Knowledge</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle" align="center">Participate in cutting-edge competitions designed to challenge your AI and ML expertise</p>
+                </div>
+                
+                <div class="events-grid">
+                    <!-- Mystic Morphs -->
+                    <div class="event-card" data-event="mystic-morphs">
+                        <div class="event-icon">🦄</div>
+                        <h3 class="event-title">Mystic Morphs</h3>
+                        <p class="event-description">A magical transformation challenge that tests your creativity and teamwork.</p>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Teams of 3</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>2 hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Exciting Prizes</span>
+                            </div>
+                        </div>
+                        <button class="event-button">Learn More</button>
+                        <div class="event-glow"></div>
+                    </div>
+
+                    <!-- Portraits of Perception -->
+                    <div class="event-card" data-event="portraits-perception">
+                        <div class="event-icon">😶‍🌫️</div>
+                        <h3 class="event-title">Portraits of Perception</h3>
+                        <p class="event-description">A visual puzzle event where perception and observation are everything.</p>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Teams of 4</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>1.5 hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Exciting Prizes</span>
+                            </div>
+                        </div>
+                        <button class="event-button">Learn More</button>
+                        <div class="event-glow"></div>
+                    </div>
+
+                    <!-- Azkaban Escape -->
+                    <div class="event-card" data-event="azkaban-escape">
+                        <div class="event-icon">🏰</div>
+                        <h3 class="event-title">Azkaban Escape</h3>
+                        <p class="event-description">A thrilling escape room event inspired by the magical world of Azkaban.</p>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Teams of 2-3</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>2 hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Exciting Prizes</span>
+                            </div>
+                        </div>
+                        <button class="event-button">Learn More</button>
+                        <div class="event-glow"></div>
+                    </div>
+
+                    <!-- Triwizard Challenge -->
+                    <div class="event-card" data-event="triwizard-challenge">
+                        <div class="event-icon">⚔️</div>
+                        <h3 class="event-title">Triwizard Challenge</h3>
+                        <p class="event-description">A multi-stage event inspired by the legendary Triwizard Tournament.</p>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Teams of 3</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>3 hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Exciting Prizes</span>
+                            </div>
+                        </div>
+                        <button class="event-button">Learn More</button>
+                        <div class="event-glow"></div>
+                    </div>
+
+                    <!-- Gringotts Innovation Vault -->
+                    <div class="event-card" data-event="gringotts-innovation">
+                        <div class="event-icon">💎</div>
+                        <h3 class="event-title">Gringotts Innovation Vault</h3>
+                        <p class="event-description">A treasure hunt for the most innovative minds, inspired by Gringotts Bank.</p>
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Teams of 2</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>1.5 hours</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Exciting Prizes</span>
+                            </div>
+                        </div>
+                        <button class="event-button">Learn More</button>
+                        <div class="event-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Coordinators Section -->
+        <section id="coordinators" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Event Coordinators</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle" align="center">Meet the wizards behind the magic of GenAIsis</p>
+                </div>
+                
+                <div class="coordinators-container">
+                    <div class="coordinators-group">
+                        <h3 class="group-title">Faculty Coordinators</h3>
+                        <div class="coordinators-grid faculty-coordinators">
+                            <div class="coordinator">
+                                <div class="coordinator-avatar" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                                <div class="coordinator-info">
+                                    <h4>Ms. Kiruba Wesley A</h4>
+                                    <p class="coordinator-role">Faculty Coordinator</p>
+                                    <div class="coordinator-contact">
+                                        <a href="tel:+919884646387"><i class="fas fa-phone"></i> +91 9884646387</a>
+                                        <a href="mailto:kirubawesley@stjosephs.ac.in"><i class="fas fa-envelope"></i> kirubawesley@stjosephs.ac.in</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="coordinator">
+                                <div class="coordinator-avatar" aria-hidden="true"><i class="fas fa-user-graduate"></i></div>
+                                <div class="coordinator-info">
+                                    <h4>Ms. Adlin Layola J.A</h4>
+                                    <p class="coordinator-role">Faculty Coordinator</p>
+                                    <div class="coordinator-contact">
+                                        <a href="tel:+918148677917"><i class="fas fa-phone"></i> +91 8148677917</a>
+                                        <a href="mailto:adlinlayola@stjosephs.ac.in"><i class="fas fa-envelope"></i> adlinlayola@stjosephs.ac.in</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="coordinators-group">
+                        <h3 class="group-title">Event Coordinators</h3>
+                        <div class="coordinators-grid event-coordinators">
+                            <div class="coordinator">
+                                <div class="coordinator-avatar" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
+                                <div class="coordinator-info">
+                                    <h4>Preetam Tony J</h4>
+                                    <p class="coordinator-role">Event Coordinator</p>
+                                    <div class="coordinator-contact">
+                                        <a href="tel:+918925249376"><i class="fas fa-phone"></i> +91 8925249376</a>
+                                        <a href="mailto:22am133@stjosephs.ac.in"><i class="fas fa-envelope"></i> 22am133@stjosephs.ac.in</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="coordinator">
+                                <div class="coordinator-avatar" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
+                                <div class="coordinator-info">
+                                    <h4>Annapoorani V</h4>
+                                    <p class="coordinator-role">Event Coordinator</p>
+                                    <div class="coordinator-contact">
+                                        <a href="tel:+916381959580"><i class="fas fa-phone"></i> +91 6381959580</a>
+                                        <a href="mailto:annapoorani3124@gmail.com"><i class="fas fa-envelope"></i> annapoorani3124@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="coordinator">
+                                <div class="coordinator-avatar" aria-hidden="true"><i class="fas fa-user-tie"></i></div>
+                                <div class="coordinator-info">
+                                    <h4>Nilavezhil Oviya V P</h4>
+                                    <p class="coordinator-role">Event Coordinator</p>
+                                    <div class="coordinator-contact">
+                                        <a href="tel:+919342526470"><i class="fas fa-phone"></i> +91 9342526470</a>
+                                        <a href="mailto:22am162@st.josephs.ac.in"><i class="fas fa-envelope"></i> 22am162@st.josephs.ac.in</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Owl Post & Directions</h2>
+                <div class="contact-grid">
+                    <div class="contact-main">
+                        <article class="acceptance-letter">
+                            <h3><i class="fas fa-scroll" aria-hidden="true"></i> St. Joseph's College Of Engineering Invitation</h3>
+                            <div class="letter-content">
+                                <p class="greeting">Dear Esteemed Guest,</p>
+                                <p>We are pleased to inform you that you have been invited to attend the GenAIsis Symposium at:</p>
+                                <address class="address-box">
+                                    <p><strong>St. Joseph's College of Engineering</strong></p>
+                                    <p>Department of Artificial Intelligence & Machine Learning</p>
+                                    <p>OMR, Chennai - 600119</p>
+                                    <p>Tamil Nadu, India</p>
+                                </address>
+                                <p>Symposium begins on <strong>August 30th, 2025</strong>. We await your arrival.</p>
+                                <p class="signature">Yours sincerely,</p>
+                                <p class="signature"><strong>Preetam Tony J<br>Event Coordinator</strong></p>
+                            </div>
+                        </article>
+                        <div class="map-container">
+                            <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Location Map</h3>
+                            <div class="map-frame">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.5878369306015!2d80.21585227507471!3d12.869876487436194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525bbeb0b2eeb7%3A0x2cb8fc0ae9b16ed5!2sSt%20Joseph's%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1754112089153!5m2!1sen!2sin" 
+                                    title="St. Joseph's College of Engineering on Google Maps"
+                                    aria-label="Interactive map showing the location of St. Joseph's College of Engineering"
+                                    allowfullscreen
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="map-instructions">
+                                <p><i class="fas fa-info-circle"></i> Use two fingers to pan and zoom on mobile devices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <img src="Assets/genaisis logo.png" alt="GenAIsis 2025" class="footer-logo">
+                <p>AIML Department | St. Joseph's College</p>
+                <nav class="social-links" aria-label="Social media links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </nav>
+                <p class="copyright">© 2025 GenAIsis. All magical rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <script>
+        // Custom cursor functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('customCursor');
+            
+            // Show the custom cursor
+            cursor.style.display = 'block';
+            
+            // Update cursor position
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Add click animation
+            document.addEventListener('mousedown', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            });
+            
+            document.addEventListener('mouseup', () => {
+                cursor.style.transform = 'translate(-50%, -50%)';
+            });
+        });
+    </script>
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal" aria-hidden="true" role="dialog" aria-modal="false">
+        <!-- Modal content will be inserted here by JavaScript -->
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+</body>
 </html>
