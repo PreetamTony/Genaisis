@@ -207,14 +207,16 @@ const Events: React.FC = () => {
                 </div>
                 
                 {/* Learn More Button */}
-                <motion.div
-                  className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${event.gradient} rounded-lg text-white font-semibold text-sm`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <a
+                  href="https://forms.gle/W15XosJ5qzrWvwKG8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${event.gradient} rounded-lg text-white font-semibold text-sm transition-transform`}
+                  style={{ textDecoration: 'none' }}
                 >
                   <Info size={16} className="mr-2" />
-                  Learn More
-                </motion.div>
+                  Register
+                </a>
 
                 {/* Decorative Elements */}
                 <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-cyan-400/10 to-purple-400/10 rounded-full blur-xl" />
@@ -296,6 +298,19 @@ const Events: React.FC = () => {
                   <div className="text-white font-semibold mb-2">{selectedEvent.coordinator.name}</div>
                   <div className="text-gray-300 text-sm mb-1">📞 {selectedEvent.coordinator.phone}</div>
                   <div className="text-gray-300 text-sm">📧 {selectedEvent.coordinator.email}</div>
+                </div>
+                {/* Registration Button */}
+                <div className="mt-6 text-center">
+                  <a
+                    href="https://forms.gle/W15XosJ5qzrWvwKG8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center px-6 py-3 bg-gradient-to-r ${selectedEvent.gradient} rounded-lg text-white font-semibold text-lg shadow-lg transition-transform`}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <Info size={20} className="mr-2" />
+                    Register for this Event
+                  </a>
                 </div>
               </div>
             </motion.div>
